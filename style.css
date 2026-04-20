@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+/* CONTAINER */
+.app {
+  max-width: 420px;
+  margin: auto;
+  padding: 15px;
+}
+
+/* HEADER */
+h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  animation: fadeInUp 0.5s ease;
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  margin: 5px 0;
+  background: #f1f5f9;
+}
+
+/* BUTTON */
+button {
+  padding: 12px;
+  margin: 5px 3px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* VIDEO */
+video {
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* RIWAYAT */
+#riwayatList div {
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 12px;
+  margin: 8px 0;
+  animation: fadeIn 0.4s ease;
+}
+
+.foto {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+/* MAP */
+#map {
+  height: 250px;
+  border-radius: 15px;
+}
+
+/* ANIMASI */
+@keyframes fadeIn {
+  from {opacity:0}
+  to {opacity:1}
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity:0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity:1;
+    transform: translateY(0);
+  }
+}
