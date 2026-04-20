@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ABSENSI KARYAWAN TOKO BETE</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+<div class="app">
+<h2>📱 ABSENSI KARYAWAN TOKO BETE</h2>
+
+<div class="card petunjuk">
+  <b>📌 Petunjuk Pengisian Absen:</b><br><br>
+  1. Masukkan nama karyawan lalu klik <b>Login</b><br>
+  2. Aktifkan izin <b>kamera & lokasi (GPS)</b><br>
+  </ul>
+  3. Pastikan wajah terlihat jelas di kamera 📸<br>
+  4. Pilih jenis absen:
+     <ul>
+	   <li>Isi Keterangan Absen</li>
+       <li>⏰ Masuk</li>
+       <li>🏁 Pulang</li>
+       <li>📝 Izin / Sakit / Alpa</li>
+	   </ul>
+  5. Sistem akan otomatis menyimpan:<br>
+     <ul>
+       <li>📷 Foto selfie</li>
+       <li>📍 Lokasi GPS</li>
+       <li>🏠 Alamat otomatis</li>
+       <li>🕒 Tanggal & jam</li>
+     </ul>
+  6. Cek hasil di menu <b>Riwayat</b><br>
+  7. Gunakan tombol <b>Export PDF</b> untuk laporan<br>
+  8. Tombol <b>Reset </b>Data Absen Akan Hilang<br>
+</div>
+<div class="card">
+<input type="text" id="nama" placeholder="Nama Karyawan (lalu klik login)">
+<button onclick="login()">Login</button>
+<button onclick="resetData()">Reset</button>
+</div>
+
+<input type="text" id="note" placeholder="Keterangan (Pilih Masuk/ Pulang/ Izin/ Sakit/ Alpa) Foto Selfi">
+
+<div class="card">
+<button onclick="absen('masuk')">Masuk</button>
+<button onclick="absen('pulang')">Pulang</button>
+</div>
+
+<div class="card">
+<button onclick="setStatus('izin')">Izin</button>
+<button onclick="setStatus('sakit')">Sakit</button>
+<button onclick="setStatus('alpa')">Alpa</button>
+</div>
+
+<video id="video" autoplay></video>
+<canvas id="canvas" hidden></canvas>
+
+<div class="card">
+<h3>Dashboard</h3>
+<div id="rekap"></div>
+<canvas id="chart"></canvas>
+<button onclick="exportPDF()">Export PDF</button>
+</div>
+
+<div class="card">
+<h3>Riwayat</h3>
+<div id="riwayatList"></div>
+</div>
+
+<div class="card">
+<h3>Map</h3>
+<div id="map"></div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
